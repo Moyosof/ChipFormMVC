@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ChipsForm.Models.Form>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class=" container p-3">
+    <div class=" row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Form </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="FormCreate" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Fill New Form
+            </a>
+        </div>
+    </div>
+    <br />
+    <table class="table table-bordered tabletable-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>referred</th>
+                <th>Selfie</th>
+                <th>Reference</th>
+                <th>FrontID</th>
+                <th>BackID</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="color: black;">
+                    <td >
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.PhoneNumber
+                    </td>
+                    <td>
+                        @item.BirthDate
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.HomeAddress
+                    </td>
+                    <td>
+                        @item.ReferredToUs
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.SelfiePhoto))
+                        {
+                            <img src="@item.SelfiePhoto" alt="Image" width="50" height="50" />
+                        }
+                    </td>
+                    <td>
+                        @item.Reference
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.UploadFrontID))
+                        {
+                            <img src="@item.UploadFrontID" alt="Image" width="50" height="50" />
+                        }
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.UploadBackID))
+                        {
+                            <img src="@item.UploadBackID" alt="Image" width="50" height="50" />
+                        }
+                    </td>
+
+                    <td>
+                        
+                        <a asp-controller="Form" asp-action="FormDelete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a> 
+
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

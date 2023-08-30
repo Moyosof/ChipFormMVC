@@ -1,0 +1,98 @@
+﻿@model ChipsForm.Models.DTO.FormDto
+
+@{
+    ViewData["Title"] = "FormCreate";
+}
+<h1>Create</h1>
+
+<h4>Form Requirement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="FormCreate" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="PhoneNumber" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="BirthDate" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Email" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="HomeAddress" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="HomeAddress" class="form-control" />
+                <span asp-validation-for="HomeAddress" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="ReferredToUs" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3 ">
+                <div class="horizontal-input">
+                    <input asp-for="ReferredToUs" class="form-control" />
+                    <span asp-validation-for="ReferredToUs" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-2">
+                <label asp-for="Selfie" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Selfie" class="form-control" type="file" accept="image/" />
+                <span asp-validation-for="Selfie" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Reference" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Reference" class="form-control" />
+                <span asp-validation-for="Reference" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="UploadFront" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="UploadFront" class="form-control" />
+                <span asp-validation-for="UploadFront" class="text-danger" type="file" accept="image/"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="UploadBack" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="UploadBack" class="form-control" />
+                <span asp-validation-for="UploadBack" class="text-danger" type="file" accept="image/"></span>
+            </div>
+            <div class="col-5 offset-2">
+
+                <button type="submit" style="width:150px" class="btn btn-success">Create</button>
+            </div>
+            @* <div class="col-5">
+            <input type="submit" value="Create" class="btn btn-success form-control" />
+
+            </div>*@
+        </form>
+    </div>
+
+</div>
